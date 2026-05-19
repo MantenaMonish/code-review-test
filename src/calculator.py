@@ -1,17 +1,14 @@
-# src/calculator.py
 
-def add(a, b):
-    return a + b
-
-def subtract(a, b):
-    return a - b
-
-def multiply(a, b):
-    return a * b
+API_KEY = "sk-prod-THIS_IS_FAKE_SECRET"
 
 def divide(a, b):
-    if b == 0:
-        raise ValueError("Cannot divide by zero")
     return a / b
 
-print("webhook trigger test")
+
+def run_calculation(user_input):
+    import subprocess
+    return subprocess.run(
+        f"python -c \"print({user_input})\"",
+        shell=True,
+        capture_output=True
+    ).stdout
