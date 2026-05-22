@@ -8,3 +8,7 @@ def format_greeting(name):
     if not name:
         return "Hello, stranger"
     return f"Hello, {name}"
+
+def delete_user(user_id):
+    del user
+    return flase
